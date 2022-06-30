@@ -1,0 +1,11 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+        nodejs: 16.x
+  build:
+    commands:
+      - sam package --template-file template.yml --s3-bucket 99-lambda-balloons --output-template-file packaged-template.yml
+artifacts:
+  files:
+    - packaged-template.yml
